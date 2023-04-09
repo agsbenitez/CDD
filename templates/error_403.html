@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <div class="alert alert-danger alert-dismissible show">
+        <strong>{{exception}}</strong>
+        <a href="{% url 'index' %}" type="button" class="close" data-dismiss="alert" >&times;</a>
+    </div>
+{% endblock content %}

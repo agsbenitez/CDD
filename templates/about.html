@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog - About</title>
+
+    {% include 'secctions/header.html' %}
+    {% load static %}
+
+</head>
+
+<body>
+    
+    {% include "nav.html" %}
+
+   {% include  'header_about.html' %}
+    
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    
+    <!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!--
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestiae debitis nobis, quod sapiente qui voluptatum, placeat magni repudiandae accusantium fugit quas labore non rerum possimus, corrupti enim modi! Et.</p>
+            --> 
+            <div class="col-lg-4 center-block">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/Adriana.jpeg' %}"  width="140" height="140" class="card-img-top rounded center float-left" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Adriana Vandevelde</h5>
+                        <p class="card-text text-center">Adri, 34 años (35 en mayo). Ingeniera Industrial graduada de Utn, hoy analista de procesos. Inquieta y curiosa. Me gusta: viajar y leer.</p>
+                        <a href="https://www.linkedin.com/in/adriana-vandevelde/" class="btn btn-primary">Linkedin</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 center-block">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/Ariel.png' %}" width="140" height="140" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Ariel Benitez</h5>
+                      <p class="card-text text-center">Ariel, 44 años. Técnico programador, estudiante, padre. Me gusta: programar <em>(quisiera hacerlo más)</em>, Rugby, Motos, Perros </p>
+                      <a href="https://www.linkedin.com/in/ariel-benitez-6362247a/" class="btn btn-primary">Linkedin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

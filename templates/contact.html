@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <h1>Nos interesa su opinión</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions">
+          <button type="submit">Send</button>
+        </div>
+    </form>
+{%endblock%}

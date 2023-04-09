@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="row">
+    <form action="{% url 'graph:seno' %}">
+        <div class=input-groupe>
+            <input type="text" value="{{amp}}" name="amp" class="form-control" placeholder="Aplitud">
+            <input type="text" value="{{frq}}" name="frq" class="form-control" placeholder="Frecuencia">
+            <div class="input-grupe-append">
+                <input type="submit" class="btn btn-primary mt-3" value="Graficar">  
+            </div>
+        </div> 
+    </form>
+</div>
+
+        
+    <br> 
+    {% if amp%}
+        <p>Amplitud: {{amp}}</p>
+    {% endif%}
+    {% if frq %}
+        <p>Frequencia: {{frq}}</p>
+    {% endif %}
+    {% if graph %} 
+    <img src='data:image/png;base64, {{graph| safe}}'> 
+    
+    {% else %}
+        <p>no items</p>
+    {% endif %}
+
+    {% include 'snippets/paginated.html' %}
+
+    
+
+{% endblock content %}
+   
