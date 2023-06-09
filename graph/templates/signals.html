@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="row">
+        <form action="{% url 'graph:signals' %}" method="get">
+            <div class=input-groupe>
+                <div>
+                    <label for="Graficas">Selecciones una Gráfica:</label>
+                    <select name="grafica" id="grafica">
+                        <option value="nrzl">NRZ-L</option>
+                        <option value="nrzi">NRZI</option>
+                        <option value="b_ami">Bipolar-AMI</option>
+                        <option value="pseudo">Pseudoternario</option>
+                        <option value="man">Manchester</option>
+                        <option value="man_d">Manchester Diferencial</option>
+                    </select>   
+                    <br>   
+                </div>
+                <label for="flujo">Flujo de Datos</label><br>
+                <input type="text" value="{{flujo}}" name="flujo" class="form-control" placeholder="flujo">
+                
+                <br>
+                
+
+                <div class="input-grupe-append">
+                    <input type="submit" class="btn btn-primary mt-3" value="Graficar">  
+                </div>
+                
+            </div> 
+        </form>
+    </div>
+        
+    <br> 
+    
+    
+
+    {% include 'snippets/graf.html' %}
+
+    
+
+{% endblock content %}
+   

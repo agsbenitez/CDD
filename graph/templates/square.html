@@ -4,28 +4,17 @@
 
 {% block content %}
     <div class="row">
-        <form action="{% url 'graph:graf' %}" method="get">
+        <form action="{% url 'graph:square' %}">
             <div class=input-groupe>
-                <label for="Graficas">Selecciones una Gráfica:</label>
-                <select name="grafica" id="grafica">
-                  <option value="seno" selected>Seno</option>
-                  <option value="cuadrada">Cuadrada</option>
-                  <option value="nys">Nyquist</option>
-                <br>
-                <br>
                 <label for="amp">Aplitud:</label><br>
                 <input type="text" value="{{amp}}" name="amp" class="form-control" placeholder="Aplitud">
                 <label for="frq">Frequencia:</label><br>
                 <input type="text" value="{{frq}}" name="frq" class="form-control" placeholder="Frecuencia">
                 <label for="fase">Fase:</label><br>
                 <input type="text" value="{{fase}}" name="fase" class="form-control" placeholder="Fase">
-                <br>
-                
-
-                </select> <div class="input-grupe-append">
+                <div class="input-grupe-append">
                     <input type="submit" class="btn btn-primary mt-3" value="Graficar">  
                 </div>
-                
             </div> 
         </form>
     </div>

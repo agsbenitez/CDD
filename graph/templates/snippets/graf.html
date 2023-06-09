@@ -1,0 +1,21 @@
+    {% if amp%}
+        <p>Amplitud: {{amp}}</p>
+    {% endif%}
+    {% if frq %}
+        <p>Frequencia: {{frq}}</p>
+    {% endif %}
+    {% if fase %}
+        <p>Fase: {{fase}}</p>
+    {% endif %}
+    
+    {% if error %}
+        <p>{{error}}</p>
+    {% endif %}
+
+      
+    {% if graph %} 
+    <img src='data:image/png;base64, {{graph| safe}}'> 
+    
+    {% else %}
+        <p>no items</p>
+    {% endif %}

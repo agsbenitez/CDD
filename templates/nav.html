@@ -14,11 +14,20 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="">Home</a>
+                    <a href="{% url 'index'%}">Home</a>
                 </li>
                 <li>
-                    <a href="{% url 'graph:seno'%}">Seno</a>
+                    <a href="{% url 'graph:graf'%}">Graficas</a>
                 </li>
+
+                <li>
+                    <a href="{% url 'graph:cap'%}">Capacidad de Canal</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'graph:signals'%}">Señales</a>
+                </li>
+
                 <li>
                     <a href="">Contacto</a>
                 </li>

@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import graph_seno, hello
+from .views import graph, cap, signals
 
 app_name='graph'
 urlpatterns = [
-    path('seno/', graph_seno, name="seno"),
-    path('hello/', hello, name="hello"),
+    path('graf/', graph, name="graf"),
+    path('cap/', cap, name="cap"),
+    path('signals', signals, name="signals")
 ]

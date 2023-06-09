@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="row">
+        <form action="{% url 'graph:cap' %}" method="get">
+            <div class=input-groupe>
+                <div>
+                    <label for="Graficas">Selecciones una Gráfica:</label>
+                    <select name="grafica" id="grafica">
+                        <option value="nys" selected>Nyquist</option>
+                        <option value="sha">Shanon</option>
+                    </select>
+                    <br>   
+                </div>
+                {%if tipo == 'nys' %}
+                    <label for="canal">Canal</label><br>
+                {%else%}
+                    <label for="canal">SNR</label><br>
+                {%endif%}
+                <input type="text" value="{{canal}}" name="canal" class="form-control" placeholder="Canal">
+                <label for="ancho_banda">Frequencia (MHz):</label><br>
+                <input type="text" value="{{ancho_banda}}" name="ancho_banda" class="form-control" placeholder="Ancho de BAnda">
+                <label for="capa">Capacidad del Canal:</label><br>
+                <input type="text" value="{{capa}}" name="capa" class="form-control" placeholder="Capacidad" readonly >
+                <br>
+                
+
+                <div class="input-grupe-append">
+                    <input type="submit" class="btn btn-primary mt-3" value="Graficar">  
+                </div>
+                
+            </div> 
+        </form>
+    </div>
+        
+    <br> 
+    
+    
+
+    {% include 'snippets/graf.html' %}
+
+    
+
+{% endblock content %}
+   
