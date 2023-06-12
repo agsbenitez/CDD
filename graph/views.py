@@ -6,7 +6,7 @@ from scipy import signal
 import plotly.graph_objects as go
 
 import math as mt
-import mpld3
+
 
 import base64
 from io import BytesIO
