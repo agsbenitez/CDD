@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import signal
+import math
 import plotly.graph_objects as go
 
 import math as mt
@@ -68,9 +69,9 @@ def graph(request):
     
     elif context['tipo'] == 'cuadrada':
         t = np.linspace(0, 1, 1000, endpoint=True)
-        fig = plt.figure()
-        ax = move_spines()
-        ax = fig.subplots()
+        #fig = plt.figure()
+        #ax = move_spines()
+        #ax = fig.subplots()
         ax.plot(t, signal.square(2 * np.pi * 2 * t), drawstyle='steps-mid')
     
     
@@ -369,3 +370,72 @@ def signals(request):
            
 
     return render(request, 'signals.html', context)
+
+
+
+def ante(request):
+    def longi(f):
+        return ((3*math.pow(10,8))/(f*math.pow(10,9)))
+    
+    def ganancia(f, a):
+        a1 = math.pi * (a/2)
+        g1 = (7*(.56*a1*math.pi))/math.pow(longi(f),2)
+        g2 = G2 = 10 * math.log(g1,10)
+        return g2  
+
+
+
+    context = dict()
+
+    form_data = request.GET.dict()
+    context['diam'] = (form_data.get('diam'))
+    context['frq'] = form_data.get('frq')
+    if request.GET:
+        if context['diam']==None or context['frq']==None:
+            context['error'] = "El diamtro de la antena deberá sera mayor a 0 mts"
+        else:
+            if int(context['diam']) <=0:
+                context['error'] = "El diamtro de la antena deberá sera mayor a 0 mts"
+            elif int(context['frq'])<=0:
+                  context['error'] = "Lacfrequencia deberá ser un valor +"
+            if not 'error' in context.keys():
+                context['g'] = ganancia(int(context['frq']),int(context['diam']) )
+    else:
+        if form_data =={}:
+            context['frq'] = 0
+            context['diam'] = 0
+             
+    
+    return render(request, 'antenas.html', context)
+
+
+def dist(request):
+    def distancia(h1, h2):
+        C = 3.57
+        K = 4/3
+        return C * ((K*h1)**(1/2) + (K*h2)**(1/2))
+    
+
+    context = dict()
+
+    form_data = request.GET.dict()
+    context['h1'] = (form_data.get('h2'))
+    context['h2'] = form_data.get('h2')
+    if request.GET:
+        if context['h1']==None or context['h1']==None:
+            context['error'] = "Altura de Torre Erronea"
+        else:
+            if int(context['h2']) <=0:
+                context['error'] = "Altura de Torre Erronea"
+            
+        if not 'error' in context.keys():
+            context['d'] = distancia(int(context['h1']),int(context['h2']) )
+    else:
+        if form_data =={}:
+            context['h1'] = 0
+            context['h2'] = 0
+
+
+
+    
+    return render(request, 'distancia.html', context)

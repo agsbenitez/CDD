@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="row">
+        <form action="{% url 'graph:ante' %}">
+            <div class=input-groupe>
+                <label for="diam">Diametro:</label><br>
+                <input type="text" value="{{diam}}" name="diam" value='1' class="form-control" placeholder="Diametro">
+                <label for="frq">Frequencia:</label><br>
+                <input type="text" value="{{frq}}" name="frq" value='1' class="form-control" placeholder="Frecuencia">
+                <label for="fase">Ganancia:</label><br>
+                <input type="text" value="{{g}}" name="g" class="form-control" placeholder="Ganancia">
+                <div class="input-grupe-append">
+                    <input type="submit" class="btn btn-primary mt-3" value="Calcular">  
+                </div>
+            </div> 
+        </form>
+    </div>
+        
+    <br> 
+    
+    
+
+    {% include 'snippets/graf.html' %}
+
+    
+
+{% endblock content %}
+   

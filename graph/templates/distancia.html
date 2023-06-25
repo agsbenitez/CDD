@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="row">
+        <form action="{% url 'graph:ante' %}">
+            <div class=input-groupe>
+                <label for="h1">Altura Antena1 (mts):</label><br>
+                <input type="text" value="{{h1}}" name="h1" value='1' class="form-control" placeholder="Altura">
+                <label for="h2">Altura Antena2 (mts):</label><br>
+                <input type="text" value="{{h2}}" name="h2" value='1' class="form-control" placeholder="Altura">
+                <label for="fase">Distancia:</label><br>
+                <input type="text" value="{{d}}" name="d" class="form-control" placeholder="Distancia">
+                <div class="input-grupe-append">
+                    <input type="submit" class="btn btn-primary mt-3" value="Calcular">  
+                </div>
+            </div> 
+        </form>
+    </div>
+        
+    <br> 
+    
+    
+
+    {% include 'snippets/graf.html' %}
+
+    
+
+{% endblock content %}
+   
