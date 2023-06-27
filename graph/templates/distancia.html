@@ -3,8 +3,7 @@
 
 
 {% block content %}
-    <div class="row">
-        <form action="{% url 'graph:ante' %}">
+        <form action="{% url 'graph:dist' %}">
             <div class=input-groupe>
                 <label for="h1">Altura Antena1 (mts):</label><br>
                 <input type="text" value="{{h1}}" name="h1" value='1' class="form-control" placeholder="Altura">
@@ -17,13 +16,12 @@
                 </div>
             </div> 
         </form>
-    </div>
         
     <br> 
     
     
 
-    {% include 'snippets/graf.html' %}
+    {% include 'snippets/ant.html' %}
 
     
 

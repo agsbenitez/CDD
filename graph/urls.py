@@ -7,5 +7,5 @@ urlpatterns = [
     path('cap/', cap, name="cap"),
     path('signals', signals, name="signals"),
     path('antenas', ante, name='ante'),
-    path('destancia', dist, name='dist')
+    path('distancia', dist, name='dist')
 ]
